@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:helpers="clr-namespace:FoodDelivery.Helpers"
+             x:Class="FoodDelivery.View.LoginView">
+    <ContentPage.Content>
+        <Grid Padding="10" VerticalOptions="Center">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <StackLayout Grid.Row="0" VerticalOptions="Center">
+                <Image Source="logo" WidthRequest="100" HeightRequest="100"/>
+                <Label Text="Login Here" FontFamily="Cabin" TextColor="Black" FontSize="40" HorizontalTextAlignment="Center"/>
+            </StackLayout>
+            <StackLayout Grid.Row="1" Spacing="20">
+                <Entry Placeholder="Enter Name" />
+                <Entry Placeholder="Password" IsPassword="True" />
+                <Button Text="Login" HorizontalOptions="Center" BackgroundColor="Beige" WidthRequest="100" HeightRequest="60" CornerRadius="20"/>
+                <Label Text="New User?"/>
+                <Button Text="Register" HorizontalOptions="Center" BackgroundColor="Beige" WidthRequest="100" HeightRequest="60" CornerRadius="20"/>
+            </StackLayout>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>
