@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
@@ -21,6 +21,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="FirebaseAuthentication.net" Version="3.7.2" />
     <PackageReference Include="FirebaseDatabase.net" Version="4.1.0" />
     <PackageReference Include="Xamarin.Forms" Version="5.0.0.2196" />
     <PackageReference Include="Xamarin.Essentials" Version="1.7.0" />
@@ -28,11 +29,15 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Folder Include="Triggers\" />
     <Folder Include="ViewModel\" />
   </ItemGroup>
 
   <ItemGroup>
     <EmbeddedResource Update="View\LoginView.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="View\SignUpPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
   </ItemGroup>

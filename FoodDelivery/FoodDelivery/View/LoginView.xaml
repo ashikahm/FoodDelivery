@@ -1,8 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:helpers="clr-namespace:FoodDelivery.Helpers"
-             x:Class="FoodDelivery.View.LoginView">
+             xmlns:helpers="clr-namespace:FoodDelivery.Helpers"           
+             x:Class="FoodDelivery.View.LoginView"
+             Visual="Material">
     <ContentPage.Content>
         <Grid Padding="10" VerticalOptions="Center">
             <Grid.RowDefinitions>
@@ -14,11 +15,15 @@
                 <Label Text="Login Here" FontFamily="Cabin" TextColor="Black" FontSize="40" HorizontalTextAlignment="Center"/>
             </StackLayout>
             <StackLayout Grid.Row="1" Spacing="20">
-                <Entry Placeholder="Enter Name" />
-                <Entry Placeholder="Password" IsPassword="True" />
-                <Button Text="Login" HorizontalOptions="Center" BackgroundColor="Beige" WidthRequest="100" HeightRequest="60" CornerRadius="20"/>
+                <Entry Placeholder="Enter Name" x:Name="EmailEntry" />
+                <Entry Placeholder="Password" IsPassword="True" x:Name="PasswordEntry"/>
+                <StackLayout Orientation="Horizontal" HorizontalOptions="Center" Spacing="20">
+                    <Button Text="Login" HorizontalOptions="Center" BackgroundColor="Beige" WidthRequest="100" HeightRequest="60" CornerRadius="20" FontAttributes="Bold" Clicked="ButtonSignIn_Clicked"/>
+                    <Button Text="Forgot Password" HorizontalOptions="Center" BackgroundColor="Beige" WidthRequest="100" HeightRequest="60" CornerRadius="20" FontAttributes="Bold"/>
+                </StackLayout>
+                
                 <Label Text="New User?"/>
-                <Button Text="Register" HorizontalOptions="Center" BackgroundColor="Beige" WidthRequest="100" HeightRequest="60" CornerRadius="20"/>
+                <Button Text="Register" HorizontalOptions="Center" BackgroundColor="Beige" WidthRequest="100" HeightRequest="60" CornerRadius="20" FontAttributes="Bold" Clicked="ButtonSignUp_Clicked"/>
             </StackLayout>
         </Grid>
     </ContentPage.Content>

@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="FoodDelivery.View.SignUpPage">
+    <ContentPage.Content>
+        <Grid Padding="10" VerticalOptions="Center">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <StackLayout Grid.Row="0" VerticalOptions="Center">
+                <Image Source="logo" WidthRequest="100" HeightRequest="100"/>
+                <Label Text="SignUp Here" FontFamily="Cabin" TextColor="Black" FontSize="40" HorizontalTextAlignment="Center"/>
+            </StackLayout>
+            <StackLayout Grid.Row="1" Spacing="20">
+                <Entry Placeholder="UserName" x:Name="NameEntry"/>
+                <Entry Placeholder="Email" x:Name="EmailEntry" />
+                <Entry Placeholder="Password" IsPassword="True" x:Name="PasswordEntry"/>
+                <StackLayout Orientation="Horizontal" HorizontalOptions="Center" Spacing="20">
+                    <Button Text="register" HorizontalOptions="Center" BackgroundColor="Beige" WidthRequest="100" HeightRequest="60" CornerRadius="20" FontAttributes="Bold" Clicked="ButtonSignUp_Clicked"/>
+                    <Button Text="SignIn" HorizontalOptions="Center" BackgroundColor="Beige" WidthRequest="100" HeightRequest="60" CornerRadius="20" FontAttributes="Bold"/>
+                </StackLayout>
+            </StackLayout>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>
