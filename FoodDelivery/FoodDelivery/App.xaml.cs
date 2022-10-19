@@ -1,5 +1,6 @@
 ﻿using FoodDelivery.View;
 using System;
+using Xamarin.Essentials;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -7,11 +8,13 @@ namespace FoodDelivery
 {
     public partial class App : Application
     {
+        
         public App()
         {
             InitializeComponent();
 
             MainPage = new NavigationPage( new LoginView());
+            
         }
 
         protected override void OnStart()

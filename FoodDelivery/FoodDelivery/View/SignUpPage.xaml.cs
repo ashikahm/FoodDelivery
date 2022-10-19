@@ -1,12 +1,17 @@
-﻿using FoodDelivery.Services;
+﻿using Firebase.Auth;
+using Firebase.Database;
+using FoodDelivery.Model;
+using FoodDelivery.Services;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using System.Security.Cryptography.X509Certificates;
+using User = FoodDelivery.Model.User;
+using Firebase.Database.Query;
 
 namespace FoodDelivery.View
 {
@@ -14,10 +19,19 @@ namespace FoodDelivery.View
     public partial class SignUpPage : ContentPage
     {
         UserService userService = new UserService();
-             
+        FirebaseClient client;
         public SignUpPage()
         {
             InitializeComponent();
+            client = new FirebaseClient("https://fooddelivery-58ac9-default-rtdb.firebaseio.com/");
+        }
+        public async Task AddUserToDB(string name, string password)
+        {
+            await client.Child("UsersData").PostAsync(new User()
+            {
+                UserName = name,
+                Password = password
+            });
         }
 
         private async void ButtonSignUp_Clicked(object sender, EventArgs e)
@@ -31,6 +45,7 @@ namespace FoodDelivery.View
                 if( result)
                 {
                     await DisplayAlert("Message", "SignUp Successfull! Please Login back", "ok");
+                    AddUserToDB(name, password);
                     return;
                 }
                 else
@@ -51,6 +66,12 @@ namespace FoodDelivery.View
                 }
             }
 
+
+        }
+
+        private void ButtonSignIn_Clicked(object sender, EventArgs e)
+        {
+            Navigation.PushAsync(new LoginView());
 
         }
     }

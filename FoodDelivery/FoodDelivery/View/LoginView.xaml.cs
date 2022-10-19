@@ -33,7 +33,7 @@ namespace FoodDelivery.View
                 }
                 else
                 {
-                    Navigation.PushAsync(new SignUpPage());
+                    await Navigation.PushAsync(new ProductsView());
                 }
             }
             catch(Exception ex)

@@ -6,6 +6,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Linq;
 using Firebase.Auth;
+using Xamarin.Forms;
+using User = FoodDelivery.Model.User;
 
 namespace FoodDelivery.Services
 {
@@ -14,14 +16,19 @@ namespace FoodDelivery.Services
     {
         FirebaseAuthProvider authProvider;
         string webkey = "AIzaSyDHEHFrMvePS2J4BZkOtriSHsvE-T_rGtM";
+        FirebaseClient client;
+        
         public UserService()
         {
             authProvider = new FirebaseAuthProvider(new FirebaseConfig(webkey));
+             client = new FirebaseClient("https://fooddelivery-58ac9-default-rtdb.firebaseio.com/");
         }
         public async Task<string> SignIn(string email, string password)
         {
             var token = await authProvider.SignInWithEmailAndPasswordAsync(email, password);
-            var name = await authProvider.GetUserAsync(token.FirebaseToken);
+            var user = await authProvider.GetUserAsync(token);
+            string name = user.DisplayName;
+            Application.Current.Properties["FirstName"] = name;
             if (string.IsNullOrEmpty(token.FirebaseToken))
             {
                 return "";
@@ -32,12 +39,15 @@ namespace FoodDelivery.Services
         }
         public async Task<bool> SignUp(string email,string password,string name)
         {
+            
             var token = await authProvider.CreateUserWithEmailAndPasswordAsync(email, password,name);
+
             if(string.IsNullOrEmpty(token.FirebaseToken))
             {
                 return false;
             }
             return true;
+
         }
         public async Task<bool> ForgotPassword(string password)
         {

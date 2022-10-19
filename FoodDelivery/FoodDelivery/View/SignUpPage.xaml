@@ -17,8 +17,8 @@
                 <Entry Placeholder="Email" x:Name="EmailEntry" />
                 <Entry Placeholder="Password" IsPassword="True" x:Name="PasswordEntry"/>
                 <StackLayout Orientation="Horizontal" HorizontalOptions="Center" Spacing="20">
-                    <Button Text="register" HorizontalOptions="Center" BackgroundColor="Beige" WidthRequest="100" HeightRequest="60" CornerRadius="20" FontAttributes="Bold" Clicked="ButtonSignUp_Clicked"/>
-                    <Button Text="SignIn" HorizontalOptions="Center" BackgroundColor="Beige" WidthRequest="100" HeightRequest="60" CornerRadius="20" FontAttributes="Bold"/>
+                    <Button Text="register" HorizontalOptions="Center" BackgroundColor="#BCCEF8" WidthRequest="100" HeightRequest="50" CornerRadius="20" FontAttributes="Bold" Clicked="ButtonSignUp_Clicked"/>
+                    <Button Text="SignIn" HorizontalOptions="Center" BackgroundColor="#BCCEF8" WidthRequest="100" HeightRequest="50" CornerRadius="20" FontAttributes="Bold" Clicked="ButtonSignIn_Clicked"/>
                 </StackLayout>
             </StackLayout>
         </Grid>

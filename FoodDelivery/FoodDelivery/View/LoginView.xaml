@@ -15,15 +15,15 @@
                 <Label Text="Login Here" FontFamily="Cabin" TextColor="Black" FontSize="40" HorizontalTextAlignment="Center"/>
             </StackLayout>
             <StackLayout Grid.Row="1" Spacing="20">
-                <Entry Placeholder="Enter Name" x:Name="EmailEntry" />
+                <Entry Placeholder="Email" x:Name="EmailEntry" />
                 <Entry Placeholder="Password" IsPassword="True" x:Name="PasswordEntry"/>
-                <StackLayout Orientation="Horizontal" HorizontalOptions="Center" Spacing="20">
-                    <Button Text="Login" HorizontalOptions="Center" BackgroundColor="Beige" WidthRequest="100" HeightRequest="60" CornerRadius="20" FontAttributes="Bold" Clicked="ButtonSignIn_Clicked"/>
-                    <Button Text="Forgot Password" HorizontalOptions="Center" BackgroundColor="Beige" WidthRequest="100" HeightRequest="60" CornerRadius="20" FontAttributes="Bold"/>
+                <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand" Spacing="20">
+                    <Button Text="Login" HorizontalOptions="Center" BackgroundColor="#BCCEF8" WidthRequest="100" HeightRequest="50" CornerRadius="20" FontAttributes="Bold" Clicked="ButtonSignIn_Clicked"/>
+                    <Button Text="Forgot Password" HorizontalOptions="CenterAndExpand" BackgroundColor="#BCCEF8" WidthRequest="100" HeightRequest="60" CornerRadius="20" FontAttributes="Bold"/>
                 </StackLayout>
                 
                 <Label Text="New User?"/>
-                <Button Text="Register" HorizontalOptions="Center" BackgroundColor="Beige" WidthRequest="100" HeightRequest="60" CornerRadius="20" FontAttributes="Bold" Clicked="ButtonSignUp_Clicked"/>
+                <Button Text="Register" HorizontalOptions="Center" BackgroundColor="#BCCEF8" WidthRequest="100" HeightRequest="50" CornerRadius="20" FontAttributes="Bold" Clicked="ButtonSignUp_Clicked"/>
             </StackLayout>
         </Grid>
     </ContentPage.Content>
